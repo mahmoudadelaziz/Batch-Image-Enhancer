@@ -4,6 +4,13 @@ import numpy as np
 def adjust_brightness_contrast(imageObject: np.ndarray) -> np.ndarray:
     """
     This function adjusts the brightness and contrast of a given image.
+    
+    Args:
+        imageObject (np.ndarray): The image data of a single image,
+        as an OpenCV image (that is, a np.ndarray)
+
+    Returns:
+        np.ndarray: the image data of the enhanced image
     """
     # Adjust brightness and contrast
     alpha = 1.25  # Contrast control (1.0 means no change)
