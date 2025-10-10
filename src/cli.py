@@ -3,6 +3,7 @@ import argparse
 from adjust_brightness import adjust_brightness_contrast
 from input_loader import load_images_from_directory
 from output_saver import save_output_images
+from sharpen import sharpen_image
 
 # Instantiating the command line argument parser
 parser = argparse.ArgumentParser(description="Batch image enhancer.")
@@ -23,7 +24,7 @@ myImgs_dict = load_images_from_directory(args.SourceDirectory)
 
 # Processing... Enhancing...
 for filename, image_info in myImgs_dict.items():
-    myImgs_dict[filename] = adjust_brightness_contrast(image_info)
+    myImgs_dict[filename] = sharpen_image(image_info)
 
 # Saving the enhanced images
 save_output_images(myImgs_dict, args.OutputDirectory)
