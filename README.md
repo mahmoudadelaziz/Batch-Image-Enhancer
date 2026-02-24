@@ -1,4 +1,4 @@
-# 🖼️ Batch Image Enhancer
+# Batch Image Enhancer
 
 A simple Python command-line tool for applying image enhancement operations to entire directories of images in one go.
 
@@ -125,5 +125,6 @@ Batch-Image-Enhancer/
 ---
 
 ## License
+
 
 This project is open source. Feel free to use, modify, and distribute it.
