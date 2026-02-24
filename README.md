@@ -53,8 +53,14 @@ pip install opencv-python rich
 ## Usage
 
 ```bash
-python src/cli.py [OPTIONS] <SourceDirectory> <OutputDirectory>
+uv run main.py [OPTIONS] <SourceDirectory> <OutputDirectory>
 ```
+
+or
+```bash
+python main.py [OPTIONS] <SourceDirectory> <OutputDirectory>
+```
+
 
 ### Arguments
 
@@ -79,17 +85,17 @@ Flags can be combined freely. If no enhancement flag is provided, no output is s
 
 **Sharpen only:**
 ```bash
-python src/cli.py -sharpen ./input_images ./output_images
+python main.py -sharpen ./input_images ./output_images
 ```
 
 **Denoise and adjust brightness/contrast:**
 ```bash
-python src/cli.py -denoise -adjustBC ./input_images ./output_images
+python main.py -denoise -adjustBC ./input_images ./output_images
 ```
 
 **Apply all three enhancements:**
 ```bash
-python src/cli.py -denoise -adjustBC -sharpen ./input_images ./output_images
+python main.py -denoise -adjustBC -sharpen ./input_images ./output_images
 ```
 
 Enhanced images will be saved as `enhanced_<original_filename>` in the output directory. The output directory is created automatically if it doesn't exist.
@@ -101,13 +107,12 @@ Enhanced images will be saved as `enhanced_<original_filename>` in the output di
 ```
 Batch-Image-Enhancer/
 ├── src/
-│   ├── cli.py                  # Entry point — argument parsing and pipeline orchestration
 │   ├── input_loader.py         # Loads supported images from a directory
 │   ├── output_saver.py         # Saves processed images to the output directory
 │   ├── adjust_brightness.py    # Brightness and contrast adjustment
 │   ├── reduce_noise.py         # Gaussian blur noise reduction
 │   └── sharpen.py              # High-pass kernel sharpening
-├── main.py
+├── main.py                     # Entry point — argument parsing and pipeline orchestration
 ├── pyproject.toml
 ├── uv.lock
 └── README.md
